@@ -29,16 +29,21 @@ jobs:
       - name: Enable corepack (pnpm)
         run: corepack enable
 
-      - name: Install dependencies
+      - name: Install root dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Build
+      - name: Install client dependencies
+        working-directory: ./client
+        run: pnpm install --frozen-lockfile
+
+      - name: Build client
+        working-directory: ./client
         run: pnpm run build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./client/dist   # 如果你的 build 輸出不是 dist 再改
+          path: ./client/dist
 
   deploy:
     needs: build
