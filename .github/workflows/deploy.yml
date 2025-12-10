@@ -38,7 +38,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist   # 如果你的 build 輸出不是 dist 再改
+          path: ./client/dist   # 如果你的 build 輸出不是 dist 再改
 
   deploy:
     needs: build
