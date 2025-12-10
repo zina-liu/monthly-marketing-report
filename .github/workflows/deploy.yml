@@ -25,13 +25,12 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'pnpm'
-          cache-dependency-path: pnpm-lock.yaml
+
+      - name: Enable corepack (pnpm)
+        run: corepack enable
 
       - name: Install dependencies
-        run: |
-          corepack enable
-          pnpm install --frozen-lockfile
+        run: pnpm install --frozen-lockfile
 
       - name: Build
         run: pnpm run build
@@ -39,7 +38,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist   # 如果你不是輸出到 dist，這裡再改
+          path: ./dist   # 如果你的 build 輸出不是 dist 再改
 
   deploy:
     needs: build
