@@ -239,7 +239,7 @@
             display:flex; align-items:center; justify-content:center;
             box-shadow:0 4px 14px rgba(79,172,254,0.35); margin-top:2px;
         }
-        .adi-card-content { flex:1; }
+        .adi-card-content { flex:1; min-width:0; }
         .adi-card-title { color:#1e293b; font-size:18px; font-weight:700; margin-bottom:8px; }
         .adi-notes { display:flex; flex-direction:column; gap:6px; margin-top:10px; }
         .adi-note-item {
@@ -359,6 +359,8 @@
             .section-title { font-size:26px; }
             .section-header { font-size:34px; }
             .calendar-grid { grid-template-columns:1fr; }
+            .adi-card { flex-direction:column; gap:16px; }
+            .adi-card .link-btn { width:100%; justify-content:center; }
         }
         @media (max-width:480px) {
             .presentation { padding:30px 20px; }
