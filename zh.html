@@ -3,28 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>行銷月報 - 2026/03</title>
+    <title>行銷月報 - 2026年4月</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         :root {
-            --primary: #2563eb;
-            --secondary: #f59e0b;
-            --accent: #ec4899;
-            --dark: #1e293b;
-            --light: #f8fafc;
             --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
             --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
             --gradient-4: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
             --gradient-5: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
-            --gradient-6: linear-gradient(135deg, #fa8bff 0%, #2bd2ff 90%, #2bff88 100%);
-            --gradient-yt:  linear-gradient(135deg, #ff0000 0%, #cc0000 100%);
+            --gradient-yt: linear-gradient(135deg, #ff4e50 0%, #f9d423 100%);
+            --gradient-gold: linear-gradient(135deg, #f7971e 0%, #ffd200 100%);
         }
 
         body {
@@ -40,34 +31,26 @@
         }
 
         .bg-shape {
-            position: fixed;
-            border-radius: 50%;
-            filter: blur(100px);
-            opacity: 0.15;
-            z-index: 0;
+            position: fixed; border-radius: 50%;
+            filter: blur(100px); opacity: 0.15; z-index: 0;
             animation: float 25s infinite ease-in-out;
         }
-        .bg-shape-1 { width: 600px; height: 600px; background: var(--gradient-1); top: -250px; left: -250px; animation-delay: 0s; }
-        .bg-shape-2 { width: 500px; height: 500px; background: var(--gradient-2); bottom: -200px; right: -200px; animation-delay: 7s; }
-        .bg-shape-3 { width: 450px; height: 450px; background: var(--gradient-3); top: 40%; right: -150px; animation-delay: 14s; }
-        .bg-shape-4 { width: 400px; height: 400px; background: var(--gradient-5); bottom: 30%; left: -100px; animation-delay: 21s; }
+        .bg-shape-1 { width:600px; height:600px; background:var(--gradient-1); top:-250px; left:-250px; animation-delay:0s; }
+        .bg-shape-2 { width:500px; height:500px; background:var(--gradient-yt); bottom:-200px; right:-200px; animation-delay:7s; }
+        .bg-shape-3 { width:450px; height:450px; background:var(--gradient-3); top:40%; right:-150px; animation-delay:14s; }
+        .bg-shape-4 { width:400px; height:400px; background:var(--gradient-5); bottom:30%; left:-100px; animation-delay:21s; }
 
         @keyframes float {
-            0%, 100% { transform: translate(0, 0) scale(1) rotate(0deg); }
-            25%  { transform: translate(40px, -40px) scale(1.1) rotate(90deg); }
-            50%  { transform: translate(-30px, 30px) scale(0.9) rotate(180deg); }
-            75%  { transform: translate(30px, 40px) scale(1.05) rotate(270deg); }
+            0%,100% { transform:translate(0,0) scale(1) rotate(0deg); }
+            25% { transform:translate(40px,-40px) scale(1.1) rotate(90deg); }
+            50% { transform:translate(-30px,30px) scale(0.9) rotate(180deg); }
+            75% { transform:translate(30px,40px) scale(1.05) rotate(270deg); }
         }
 
-        .container {
-            max-width: 1400px;
-            width: 100%;
-            position: relative;
-            z-index: 1;
-        }
+        .container { max-width:1400px; width:100%; position:relative; z-index:1; }
 
         .presentation {
-            background: rgba(255, 255, 255, 0.98);
+            background: rgba(255,255,255,0.98);
             backdrop-filter: blur(30px);
             border-radius: 40px;
             padding: 70px;
@@ -78,279 +61,310 @@
             overflow: hidden;
         }
 
-        .corner-decoration {
-            position: absolute;
-            width: 150px;
-            height: 150px;
-            opacity: 0.06;
-        }
-        .corner-decoration.top-left    { top:0; left:0; background: var(--gradient-1); clip-path: polygon(0 0,100% 0,0 100%); }
-        .corner-decoration.bottom-right { bottom:0; right:0; background: var(--gradient-2); clip-path: polygon(100% 0,100% 100%,0 100%); }
-        .corner-decoration.top-right   { top:0; right:0; background: var(--gradient-3); clip-path: polygon(100% 0,100% 100%,0 0); opacity:0.04; }
+        .corner-decoration { position:absolute; width:150px; height:150px; opacity:0.06; }
+        .corner-decoration.top-left    { top:0; left:0;   background:var(--gradient-1); clip-path:polygon(0 0,100% 0,0 100%); }
+        .corner-decoration.bottom-right{ bottom:0; right:0; background:var(--gradient-yt); clip-path:polygon(100% 0,100% 100%,0 100%); }
+        .corner-decoration.top-right   { top:0; right:0;  background:var(--gradient-3); clip-path:polygon(100% 0,100% 100%,0 0); opacity:0.04; }
 
-        /* ── Header ── */
-        .header { margin-bottom: 60px; }
+        .header { margin-bottom:60px; }
 
         .date-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            background: var(--gradient-4);
-            color: white;
-            padding: 14px 32px;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 16px;
-            margin-bottom: 24px;
-            box-shadow: 0 12px 35px rgba(250,112,154,0.4);
-            animation: slideDown 0.6s ease-out;
+            display:inline-flex; align-items:center; gap:12px;
+            background:var(--gradient-gold); color:white;
+            padding:14px 32px; border-radius:50px;
+            font-weight:700; font-size:16px; margin-bottom:24px;
+            box-shadow:0 12px 35px rgba(247,151,30,0.4);
+            animation:slideDown 0.6s ease-out;
         }
 
-        @keyframes slideDown {
-            from { opacity:0; transform: translateY(-30px); }
-            to   { opacity:1; transform: translateY(0); }
-        }
+        @keyframes slideDown { from{opacity:0;transform:translateY(-30px)} to{opacity:1;transform:translateY(0)} }
+        @keyframes slideUp   { from{opacity:0;transform:translateY(40px)}  to{opacity:1;transform:translateY(0)} }
+        @keyframes fadeIn    { from{opacity:0;transform:translateY(30px)}  to{opacity:1;transform:translateY(0)} }
 
         h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 64px;
-            font-weight: 900;
-            background: linear-gradient(135deg, #0f172a 0%, #334155 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 12px;
-            line-height: 1.1;
-            animation: slideUp 0.8s ease-out 0.2s both;
-            letter-spacing: -1px;
+            font-family:'Playfair Display',serif;
+            font-size:64px; font-weight:900;
+            background:linear-gradient(135deg,#0f172a 0%,#334155 100%);
+            -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+            margin-bottom:12px; line-height:1.1; letter-spacing:-1px;
+            animation:slideUp 0.8s ease-out 0.2s both;
         }
+        .subtitle { color:#64748b; font-size:20px; font-weight:500; animation:slideUp 0.8s ease-out 0.3s both; }
 
-        @keyframes slideUp {
-            from { opacity:0; transform: translateY(40px); }
-            to   { opacity:1; transform: translateY(0); }
-        }
-
-        .subtitle {
-            color: #64748b;
-            font-size: 20px;
-            font-weight: 500;
-            animation: slideUp 0.8s ease-out 0.3s both;
-        }
-
-        /* ── Section ── */
-        .content-grid {
-            display: grid;
-            gap: 35px;
-            margin-top: 50px;
-        }
+        .content-grid { display:grid; gap:35px; margin-top:50px; }
 
         .section {
-            position: relative;
-            padding: 40px;
-            border-radius: 28px;
-            overflow: hidden;
-            transition: all 0.4s cubic-bezier(0.4,0,0.2,1);
-            animation: fadeIn 0.6s ease-out both;
+            position:relative; padding:40px; border-radius:28px;
+            overflow:hidden; transition:all 0.4s cubic-bezier(0.4,0,0.2,1);
+            animation:fadeIn 0.6s ease-out both;
         }
-        .section:nth-child(1) { animation-delay: 0.4s; }
-        .section:nth-child(2) { animation-delay: 0.5s; }
-
-        @keyframes fadeIn {
-            from { opacity:0; transform: translateY(30px); }
-            to   { opacity:1; transform: translateY(0); }
-        }
-
-        .section:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 25px 60px rgba(0,0,0,0.2);
-        }
-
+        .section:nth-child(1){animation-delay:0.4s}
+        .section:nth-child(2){animation-delay:0.5s}
+        .section:nth-child(3){animation-delay:0.6s}
+        .section:hover { transform:translateY(-8px); box-shadow:0 25px 60px rgba(0,0,0,0.2); }
         .section::before {
-            content: '';
-            position: absolute;
-            top:0; left:0; right:0; bottom:0;
-            background: linear-gradient(135deg, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0) 100%);
-            pointer-events: none;
+            content:''; position:absolute; top:0;left:0;right:0;bottom:0;
+            background:linear-gradient(135deg,rgba(255,255,255,0.25) 0%,rgba(255,255,255,0) 100%);
+            pointer-events:none;
         }
 
-        /* Section colour themes */
-        .section-youtube    { background: linear-gradient(135deg, #ff416c 0%, #ff4b2b 100%); box-shadow: 0 18px 45px rgba(255,65,108,0.35); }
-        .section-newsletter { background: var(--gradient-1); box-shadow: 0 18px 45px rgba(102,126,234,0.35); }
+        .section-yt          { background:var(--gradient-yt);  box-shadow:0 18px 45px rgba(255,78,80,0.35); }
+        .section-newsletter  { background:var(--gradient-1);   box-shadow:0 18px 45px rgba(102,126,234,0.35); }
+        .section-queue       { background:var(--gradient-5);   box-shadow:0 18px 45px rgba(67,233,123,0.35); }
+        .section-adi         { background:var(--gradient-3);   box-shadow:0 18px 45px rgba(79,172,254,0.35); }
 
-        /* ── Section Title ── */
         .section-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 36px;
-            font-weight: 700;
-            color: white;
-            margin-bottom: 28px;
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.15);
+            font-family:'Playfair Display',serif; font-size:34px; font-weight:700;
+            color:white; margin-bottom:28px; display:flex; align-items:center; gap:16px;
+            text-shadow:0 2px 10px rgba(0,0,0,0.15);
         }
-        .section-title svg { width:44px; height:44px; filter: drop-shadow(0 4px 10px rgba(0,0,0,0.25)); }
+        .section-title svg { width:42px; height:42px; filter:drop-shadow(0 4px 10px rgba(0,0,0,0.25)); }
 
-        /* ── Item cards ── */
-        .item-list {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-        }
+        .item-list { list-style:none; display:flex; flex-direction:column; gap:16px; }
 
         .item {
-            background: rgba(255,255,255,0.97);
-            padding: 22px 28px;
-            border-radius: 18px;
+            background:rgba(255,255,255,0.97);
+            padding:22px 28px; border-radius:18px;
+            display:flex; align-items:flex-start; gap:20px;
+            transition:all 0.3s ease;
+            box-shadow:0 5px 18px rgba(0,0,0,0.12);
+            position:relative; overflow:hidden;
+        }
+        .item::before {
+            content:''; position:absolute; left:0;top:0;bottom:0; width:6px;
+            background:var(--gradient-4); transform:scaleY(0); transition:transform 0.3s ease;
+        }
+        .item:hover::before { transform:scaleY(1); }
+        .item:hover { transform:translateX(10px); box-shadow:0 10px 30px rgba(0,0,0,0.18); }
+
+        .item-content { flex:1; }
+        .item-text { color:#1e293b; font-size:18px; font-weight:500; line-height:1.6; }
+        .item-note { color:#64748b; font-size:15px; margin-top:6px; font-weight:400; }
+
+        .bullet-point { width:8px; height:8px; background:#667eea; border-radius:50%; margin-top:8px; flex-shrink:0; }
+
+        .link-btn {
+            display:inline-flex; align-items:center; gap:8px;
+            padding:10px 20px; border-radius:12px; font-size:14px; font-weight:700;
+            color:white; text-decoration:none; transition:all 0.3s ease;
+            flex-shrink:0; white-space:nowrap;
+        }
+        .link-btn:hover { transform:translateY(-2px); filter:brightness(1.1); }
+        .btn-yt     { background:linear-gradient(135deg,#ff4e50,#c0392b); box-shadow:0 4px 14px rgba(255,78,80,0.4); }
+        .btn-gdrive { background:linear-gradient(135deg,#0f9d58,#34a853); box-shadow:0 4px 14px rgba(15,157,88,0.4); }
+        .btn-link   { background:linear-gradient(135deg,#667eea,#764ba2); box-shadow:0 4px 14px rgba(102,126,234,0.4); }
+
+        /* Calendar */
+        .calendar-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:22px; }
+
+        .calendar-month {
+            background:rgba(255,255,255,0.15); border-radius:20px; padding:22px;
+            backdrop-filter:blur(10px); border:2px solid rgba(255,255,255,0.2);
+            transition:all 0.3s ease;
+        }
+        .calendar-month:hover { transform:translateY(-5px); background:rgba(255,255,255,0.22); }
+
+        .calendar-header {
+            display:flex; align-items:center; gap:10px; color:white;
+            font-weight:700; font-size:17px; margin-bottom:18px; padding-bottom:14px;
+            border-bottom:2px solid rgba(255,255,255,0.3); text-shadow:0 2px 8px rgba(0,0,0,0.2);
+        }
+
+        .calendar-events { display:flex; flex-direction:column; gap:12px; }
+
+        .calendar-event {
+            background:rgba(255,255,255,0.97); border-radius:14px; padding:14px 16px;
+            display:flex; gap:14px; align-items:center;
+            transition:all 0.3s ease; box-shadow:0 4px 12px rgba(0,0,0,0.1);
+            position:relative; overflow:hidden;
+        }
+        .calendar-event::before {
+            content:''; position:absolute; left:0;top:0;bottom:0; width:4px;
+            background:linear-gradient(180deg,#667eea,#764ba2); transition:width 0.3s ease;
+        }
+        .calendar-event:hover::before { width:8px; }
+        .calendar-event:hover { transform:translateX(6px); box-shadow:0 8px 20px rgba(0,0,0,0.15); }
+
+        .calendar-event.sent    { background:rgba(187,247,208,0.5); }
+        .calendar-event.sent::before  { background:linear-gradient(180deg,#10b981,#059669); }
+        .calendar-event.working { background:rgba(254,249,195,0.6); }
+        .calendar-event.working::before { background:var(--gradient-gold); }
+
+        .event-date {
+            flex-shrink:0; width:50px; height:50px;
+            background:linear-gradient(135deg,#667eea,#764ba2); color:white;
+            border-radius:12px; display:flex; align-items:center; justify-content:center;
+            font-weight:900; font-size:14px; text-align:center; line-height:1.2;
+            box-shadow:0 4px 12px rgba(102,126,234,0.3);
+        }
+        .calendar-event.sent    .event-date { background:linear-gradient(135deg,#10b981,#059669); box-shadow:0 4px 12px rgba(16,185,129,0.3); }
+        .calendar-event.working .event-date { background:var(--gradient-gold); box-shadow:0 4px 12px rgba(247,151,30,0.3); }
+
+        .event-content { flex:1; }
+        .event-title  { color:#1e293b; font-weight:700; font-size:15px; margin-bottom:3px; }
+        .event-status { color:#64748b; font-size:12px; font-weight:600; }
+        .calendar-event.sent    .event-status { color:#059669; }
+        .calendar-event.working .event-status { color:#d97706; }
+
+        .event-link {
+            display:inline-flex; align-items:center; gap:5px; margin-top:6px;
+            padding:5px 10px; background:linear-gradient(135deg,#667eea,#764ba2);
+            color:white; border-radius:8px; font-size:12px; font-weight:600;
+            text-decoration:none; transition:all 0.3s ease;
+        }
+        .event-link:hover { transform:translateY(-1px); filter:brightness(1.1); }
+
+        /* Divider */
+        .divider { margin-top:70px; padding-top:70px; border-top:3px dashed rgba(148,163,184,0.25); }
+
+        .section-header {
+            font-family:'Playfair Display',serif; font-size:46px; font-weight:900;
+            background:linear-gradient(135deg,#0f172a 0%,#334155 100%);
+            -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+            margin-bottom:40px; letter-spacing:-0.5px;
+            animation:slideUp 0.8s ease-out 0.5s both;
+        }
+
+        .adi-card {
+            background:rgba(255,255,255,0.97); padding:28px 32px; border-radius:20px;
+            display:flex; align-items:flex-start; gap:24px;
+            box-shadow:0 8px 24px rgba(0,0,0,0.14); position:relative; overflow:hidden;
+            transition:all 0.3s ease;
+        }
+        .adi-card::before { content:''; position:absolute; left:0;top:0;bottom:0; width:6px; background:var(--gradient-3); }
+        .adi-card:hover { transform:translateX(8px); box-shadow:0 12px 32px rgba(0,0,0,0.2); }
+        .adi-icon {
+            flex-shrink:0; width:52px; height:52px;
+            background:linear-gradient(135deg,#4facfe,#00f2fe); border-radius:14px;
+            display:flex; align-items:center; justify-content:center;
+            box-shadow:0 4px 14px rgba(79,172,254,0.35); margin-top:2px;
+        }
+        .adi-card-content { flex:1; }
+        .adi-card-title { color:#1e293b; font-size:18px; font-weight:700; margin-bottom:8px; }
+        .adi-notes { display:flex; flex-direction:column; gap:6px; margin-top:10px; }
+        .adi-note-item {
+            display:flex; align-items:flex-start; gap:10px;
+            color:#475569; font-size:14px; line-height:1.5;
+        }
+        .adi-note-num {
+            flex-shrink:0; width:22px; height:22px;
+            background:linear-gradient(135deg,#4facfe,#00f2fe); color:white;
+            border-radius:50%; display:flex; align-items:center; justify-content:center;
+            font-size:11px; font-weight:700; margin-top:1px;
+        }
+
+        /* Case Study CTA */
+        .cta-card {
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 50%, #0f2744 100%);
+            border-radius: 28px;
+            padding: 48px 52px;
             display: flex;
-            align-items: flex-start;
-            gap: 20px;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 18px rgba(0,0,0,0.12);
+            align-items: center;
+            gap: 48px;
+            box-shadow: 0 20px 60px rgba(15,23,42,0.5), 0 0 0 1px rgba(255,255,255,0.08);
             position: relative;
             overflow: hidden;
         }
-
-        .item::before {
+        .cta-card::before {
             content: '';
             position: absolute;
-            left:0; top:0; bottom:0;
-            width: 6px;
-            background: var(--gradient-4);
-            transform: scaleY(0);
-            transition: transform 0.3s ease;
+            top: -80px; right: -80px;
+            width: 300px; height: 300px;
+            background: radial-gradient(circle, rgba(102,126,234,0.25) 0%, transparent 70%);
+            pointer-events: none;
         }
-
-        .item:hover::before { transform: scaleY(1); }
-        .item:hover {
-            transform: translateX(10px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.18);
-        }
-
-        .item-index {
-            flex-shrink: 0;
-            width: 36px;
-            height: 36px;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 900;
-            font-size: 15px;
-            color: white;
-            margin-top: 2px;
-        }
-
-        .section-youtube  .item-index { background: linear-gradient(135deg, #ff416c 0%, #ff4b2b 100%); }
-        .section-newsletter .item-index { background: var(--gradient-1); }
-
-        .item-content { flex:1; }
-
-        .item-text {
-            color: #1e293b;
-            font-size: 17px;
-            font-weight: 600;
-            line-height: 1.5;
-        }
-
-        .item-tag {
-            display: inline-block;
-            background: rgba(102,126,234,0.12);
-            color: #667eea;
-            font-size: 12px;
-            font-weight: 700;
-            padding: 3px 10px;
-            border-radius: 20px;
-            margin-bottom: 6px;
-            letter-spacing: 0.3px;
-        }
-
-        .item-tag.tag-yt   { background: rgba(255,65,108,0.12); color: #ff416c; }
-        .item-tag.tag-news { background: rgba(102,126,234,0.12); color: #667eea; }
-        .item-tag.tag-case { background: rgba(67,233,123,0.15); color: #059669; }
-        .item-tag.tag-product { background: rgba(250,112,154,0.12); color: #be185d; }
-        .item-tag.tag-event { background: rgba(250,176,5,0.15); color: #b45309; }
-
-        .item-note {
-            color: #64748b;
-            font-size: 14px;
-            margin-top: 5px;
-            font-weight: 400;
-        }
-
-        /* ── Link button ── */
-        .link-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            padding: 9px 18px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            text-decoration: none;
-            border-radius: 12px;
-            font-size: 13px;
-            font-weight: 700;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 12px rgba(102,126,234,0.3);
-            flex-shrink: 0;
-            white-space: nowrap;
-            margin-top: 2px;
-        }
-        .link-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(102,126,234,0.5);
-        }
-        .link-btn.btn-yt {
-            background: linear-gradient(135deg, #ff416c 0%, #ff4b2b 100%);
-            box-shadow: 0 4px 12px rgba(255,65,108,0.3);
-        }
-        .link-btn.btn-yt:hover { box-shadow: 0 6px 20px rgba(255,65,108,0.5); }
-        .link-btn.btn-green {
-            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
-            color: #065f46;
-            box-shadow: 0 4px 12px rgba(67,233,123,0.3);
-        }
-        .link-btn.btn-green:hover { box-shadow: 0 6px 20px rgba(67,233,123,0.5); }
-
-        /* ── Sending badge ── */
-        .sending-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-            background: rgba(250,112,154,0.15);
-            color: #be185d;
-            font-size: 12px;
-            font-weight: 700;
-            padding: 4px 12px;
-            border-radius: 20px;
-            margin-top: 6px;
-            border: 1px solid rgba(250,112,154,0.3);
-        }
-        .sending-badge::before {
+        .cta-card::after {
             content: '';
-            width: 7px;
-            height: 7px;
-            border-radius: 50%;
-            background: #ec4899;
-            animation: pulse 1.5s ease-in-out infinite;
+            position: absolute;
+            bottom: -60px; left: 200px;
+            width: 250px; height: 250px;
+            background: radial-gradient(circle, rgba(79,172,254,0.15) 0%, transparent 70%);
+            pointer-events: none;
         }
-        @keyframes pulse {
-            0%,100% { opacity:1; transform:scale(1); }
-            50%      { opacity:0.4; transform:scale(0.8); }
+        .cta-left {
+            display: flex;
+            gap: 28px;
+            flex: 1;
+            align-items: flex-start;
+            position: relative;
+            z-index: 1;
         }
+        .cta-icon {
+            flex-shrink: 0;
+            width: 68px; height: 68px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 20px;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 8px 24px rgba(102,126,234,0.5);
+            margin-top: 4px;
+        }
+        .cta-body { flex: 1; }
+        .cta-eyebrow {
+            color: #94a3b8;
+            font-size: 13px; font-weight: 700;
+            letter-spacing: 2px; text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+        .cta-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px; font-weight: 900;
+            color: white; line-height: 1.2;
+            margin-bottom: 14px;
+        }
+        .cta-desc {
+            color: #94a3b8;
+            font-size: 15px; line-height: 1.7;
+            margin-bottom: 20px;
+            max-width: 520px;
+        }
+        .cta-tags { display: flex; gap: 10px; flex-wrap: wrap; }
+        .tag {
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.12);
+            color: #cbd5e1;
+            padding: 6px 14px;
+            border-radius: 50px;
+            font-size: 13px; font-weight: 600;
+        }
+        .cta-right {
+            flex-shrink: 0;
+            display: flex; flex-direction: column;
+            align-items: center; gap: 14px;
+            position: relative; z-index: 1;
+        }
+        .cta-btn {
+            display: inline-flex; align-items: center; gap: 10px;
+            padding: 18px 32px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white; text-decoration: none;
+            border-radius: 16px;
+            font-size: 16px; font-weight: 700;
+            white-space: nowrap;
+            box-shadow: 0 8px 28px rgba(102,126,234,0.55);
+            transition: all 0.3s ease;
+        }
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 14px 36px rgba(102,126,234,0.7);
+            filter: brightness(1.1);
+        }
+        .cta-note { color: #64748b; font-size: 13px; font-weight: 500; }
 
-        /* ── Responsive ── */
-        @media (max-width: 768px) {
-            .presentation { padding: 45px 35px; }
-            h1 { font-size: 44px; }
-            .section-title { font-size: 28px; }
-            .item { flex-wrap: wrap; }
+        @media (max-width:768px) {
+            .cta-card { flex-direction:column; padding:36px 28px; gap:32px; }
+            .cta-right { width:100%; }
+            .cta-btn { width:100%; justify-content:center; }
+            .presentation { padding:40px 30px; }
+            h1 { font-size:44px; }
+            .section-title { font-size:26px; }
+            .section-header { font-size:34px; }
+            .calendar-grid { grid-template-columns:1fr; }
         }
-        @media (max-width: 480px) {
-            .presentation { padding: 35px 25px; }
-            h1 { font-size: 36px; }
-            .link-btn { width: 100%; justify-content: center; margin-top: 10px; }
+        @media (max-width:480px) {
+            .presentation { padding:30px 20px; }
+            h1 { font-size:36px; }
+            .item { flex-wrap:wrap; }
+            .link-btn { width:100%; justify-content:center; margin-top:8px; }
         }
     </style>
 </head>
@@ -370,121 +384,159 @@
             <div class="header">
                 <div class="date-badge">
                     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                        <line x1="16" y1="2" x2="16" y2="6"></line>
-                        <line x1="8" y1="2" x2="8" y2="6"></line>
-                        <line x1="3" y1="10" x2="21" y2="10"></line>
+                        <rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
                     </svg>
-                    報告月份 • 2026 年 3 月
+                    報告月份 &bull; 2026年4月
                 </div>
                 <h1>行銷月報</h1>
-                <p class="subtitle">Marketing Monthly Report • 工作彙整</p>
+                <p class="subtitle">行銷部門 &bull; 每月報告</p>
             </div>
 
             <div class="content-grid">
 
-                <!-- ── YouTube ── -->
-                <div class="section section-youtube">
+                <!-- YouTube -->
+                <div class="section section-yt">
                     <h2 class="section-title">
-                        <!-- YouTube icon -->
                         <svg viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.7-.8-2.1-.9C16.4 5 12 5 12 5s-4.4 0-6.9.1c-.4.1-1.3.1-2.1.9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.3.9C6.8 19 12 19 12 19s4.4 0 6.9-.2c.4-.1 1.3-.1 2.1-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.5V9.5l5.6 2.5-5.6 2.5z"/>
+                            <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.7 15.5V8.5l6.3 3.5-6.3 3.5z"/>
                         </svg>
-                        YouTube
+                        YouTube 最新影片
                     </h2>
                     <ul class="item-list">
                         <li class="item">
-                            <div class="item-index">1</div>
+                            <div class="bullet-point" style="background:#ff4e50;"></div>
                             <div class="item-content">
-                                <div class="item-tag tag-yt">影片</div>
-                                <div class="item-text">產品新動態</div>
-                                <div class="item-note">Roadmap &amp; New Features</div>
+                                <div class="item-text">如何將 GV-AS Bridge 連到 GV-Cloud Access Control</div>
+                                <div class="item-note">教學影片 &bull; GV-Cloud Access Control 系列</div>
                             </div>
-                            <a href="https://youtu.be/Jj4X5i1x5kk" target="_blank" class="link-btn btn-yt">
-                                <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.7-.8-2.1-.9C16.4 5 12 5 12 5s-4.4 0-6.9.1c-.4.1-1.3.1-2.1.9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.3.9C6.8 19 12 19 12 19s4.4 0 6.9-.2c.4-.1 1.3-.1 2.1-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.5V9.5l5.6 2.5-5.6 2.5z"/></svg>
-                                觀看
-                            </a>
-                        </li>
-                        <li class="item">
-                            <div class="item-index">2</div>
-                            <div class="item-content">
-                                <div class="item-tag tag-yt">影片</div>
-                                <div class="item-text">GV-VMS 備份與刪除影片、日誌</div>
-                                <div class="item-note">How to Backup and Delete Videos and Logs on GV-VMS</div>
-                            </div>
-                            <a href="https://www.youtube.com/watch?v=T7F2VNcnEy4" target="_blank" class="link-btn btn-yt">
-                                <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.7-.8-2.1-.9C16.4 5 12 5 12 5s-4.4 0-6.9.1c-.4.1-1.3.1-2.1.9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.3.9C6.8 19 12 19 12 19s4.4 0 6.9-.2c.4-.1 1.3-.1 2.1-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.5V9.5l5.6 2.5-5.6 2.5z"/></svg>
-                                觀看
-                            </a>
-                        </li>
-                        <li class="item">
-                            <div class="item-index">3</div>
-                            <div class="item-content">
-                                <div class="item-tag tag-yt">影片</div>
-                                <div class="item-text">GV-ASManager 火警逃生門控設定</div>
-                                <div class="item-note">How to Setup Fire Exit on GV-ASManager</div>
-                            </div>
-                            <a href="https://www.youtube.com/watch?v=4-MM8bksx1Q" target="_blank" class="link-btn btn-yt">
-                                <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.7-.8-2.1-.9C16.4 5 12 5 12 5s-4.4 0-6.9.1c-.4.1-1.3.1-2.1.9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.3.9C6.8 19 12 19 12 19s4.4 0 6.9-.2c.4-.1 1.3-.1 2.1-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.5V9.5l5.6 2.5-5.6 2.5z"/></svg>
+                            <a href="https://youtu.be/HCqqK2zXdTw" target="_blank" class="link-btn btn-yt">
+                                <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
+                                    <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.7 15.5V8.5l6.3 3.5-6.3 3.5z"/>
+                                </svg>
                                 觀看
                             </a>
                         </li>
                     </ul>
                 </div>
 
-                <!-- ── 電子報 ── -->
+                <!-- Newsletter Schedule -->
                 <div class="section section-newsletter">
                     <h2 class="section-title">
                         <svg viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                            <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
                         </svg>
-                        電子報 • Newsletter
+                        Newsletter 排程
                     </h2>
-                    <ul class="item-list">
-                        <!-- 1 ISC West -->
-                        <li class="item">
-                            <div class="item-index">1</div>
-                            <div class="item-content">
-                                <div class="item-tag tag-event">活動通知</div>
-                                <div class="item-text">ISC West 展前通知</div>
-                                <div class="item-note">2026 ISC West 展覽活動預告</div>
+                    <div class="calendar-grid">
+                        <!-- April -->
+                        <div class="calendar-month">
+                            <div class="calendar-header">
+                                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="white" stroke-width="2">
+                                    <rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+                                </svg>
+                                2026年4月
                             </div>
-                            <a href="https://www.geovision.com.tw/spotlight/iscwest2026/desktop/index.html" target="_blank" class="link-btn">
-                                <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
-                                開啟
-                            </a>
-                        </li>
-                        <!-- 2 新品月報 -->
-                        <li class="item">
-                            <div class="item-index">2</div>
-                            <div class="item-content">
-                                <div class="item-tag tag-product">新品月報</div>
-                                <div class="item-text">3 月新品</div>
-                                <div class="item-note">2026-03 New Product Release</div>
+                            <div class="calendar-events">
+                                <div class="calendar-event sent">
+                                    <div class="event-date">4/3</div>
+                                    <div class="event-content">
+                                        <div class="event-title">4月新品月報</div>
+                                        <div class="event-status">✓ 已發送</div>
+                                        <a href="https://www.geovision.com.tw/_upload/doc/re/2026-04-release.html" target="_blank" class="event-link">
+                                            <svg viewBox="0 0 24 24" fill="currentColor" width="11" height="11"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14l-5-5 1.4-1.4 3.6 3.6 7.6-7.6L21 8l-9 9z"/></svg>
+                                            閱讀
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="calendar-event sent">
+                                    <div class="event-date">4/14</div>
+                                    <div class="event-content">
+                                        <div class="event-title">ISC West Recap</div>
+                                        <div class="event-status">✓ 已發送</div>
+                                        <a href="https://www.geovision.com.tw/spotlight/reiscwest2026/desktop/index.html" target="_blank" class="event-link">
+                                            <svg viewBox="0 0 24 24" fill="currentColor" width="11" height="11"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-02-2-2zm-7 14l-5-5 1.4-1.4 3.6 3.6 7.6-7.6L21 8l-9 9z"/></svg>
+                                            閱讀
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="calendar-event working">
+                                    <div class="event-date">4/29</div>
+                                    <div class="event-content">
+                                        <div class="event-title">Panoramic / Wide Angle Camera</div>
+                                        <div class="event-status">⚙ 製作中</div>
+                                    </div>
+                                </div>
                             </div>
-                            <a href="https://www.geovision.com.tw/_upload/doc/re/2026-03-release.html" target="_blank" class="link-btn">
-                                <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
-                                開啟
-                            </a>
-                        </li>
-                        <!-- 3 Case Study -->
-                        <li class="item">
-                            <div class="item-index">3</div>
-                            <div class="item-content">
-                                <div class="item-tag tag-case">案例分享</div>
-                                <div class="item-text">斯洛伐克鐵路 • Slovak Railway</div>
-                                <div class="item-note">Slovak Railway Case Study</div>
+                        </div>
+
+                        <!-- May -->
+                        <div class="calendar-month">
+                            <div class="calendar-header">
+                                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="white" stroke-width="2">
+                                    <rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+                                </svg>
+                                2026年5月
                             </div>
-                            <a href="https://www.geovision.com.tw/spotlight/casestudy_slovakia/desktop/index.html" target="_blank" class="link-btn btn-green">
-                                <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
-                                開啟
-                            </a>
-                        </li>
-                    </ul>
+                            <div class="calendar-events">
+                                <div class="calendar-event upcoming">
+                                    <div class="event-date">5/13</div>
+                                    <div class="event-content">
+                                        <div class="event-title">澳洲 Federation University — 9 校區</div>
+                                        <div class="event-status">已排程</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
+            </div><!-- /content-grid -->
+
+            <!-- Marketing Materials -->
+            <div class="divider">
+                <h2 class="section-header">行銷素材</h2>
+
+                <div class="section section-adi">
+                    <h2 class="section-title">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm-5 14H4v-4h11v4zm0-5H4V9h11v4zm5 5h-4V9h4v9z"/>
+                        </svg>
+                        A Website Project
+                    </h2>
+                    <div class="adi-card">
+                        <div class="adi-icon">
+                            <svg viewBox="0 0 24 24" fill="white" width="26" height="26">
+                                <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm7 13H5v-.23c0-.62.28-1.2.76-1.58C7.47 15.82 9.64 15 12 15s4.53.82 6.24 2.19c.48.38.76.97.76 1.58V19z"/>
+                            </svg>
+                        </div>
+                        <div class="adi-card-content">
+                            <div class="adi-card-title">網站專案素材</div>
+                            <div class="adi-notes">
+                                <div class="adi-note-item">
+                                    <div class="adi-note-num">1</div>
+                                    <span>可自行取用修改。</span>
+                                </div>
+                                <div class="adi-note-item">
+                                    <div class="adi-note-num">2</div>
+                                    <span>圖片上無型號。</span>
+                                </div>
+                                <div class="adi-note-item">
+                                    <div class="adi-note-num">3</div>
+                                    <span>僅提供 PNG 格式。</span>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="https://drive.google.com/drive/folders/19Kx88Xk_-_6B2mwGl4HSnR36QXzj8iWd?usp=drive_link" target="_blank" class="link-btn btn-gdrive" style="align-self:flex-start;">
+                            <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
+                                <path d="M7.71 3.5L1.15 15l3.43 5.94 6.56-11.44L7.71 3.5zm8.59 0l-3.43 5.94L19.42 21H22.85L16.3 3.5zM12 10.06L8.57 15.94l3.43 3.56 3.43-3.56L12 10.06z"/>
+                            </svg>
+                            Google Drive
+                        </a>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
+
+        </div><!-- /presentation -->
+    </div><!-- /container -->
 </body>
 </html>
