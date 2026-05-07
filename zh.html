@@ -1,544 +1,324 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="zh-Hant">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>行銷月報 - 2026年4月</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+    <title>GeoVision 行銷月報</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-
         :root {
-            --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-            --gradient-4: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
-            --gradient-5: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
-            --gradient-yt: linear-gradient(135deg, #ff4e50 0%, #f9d423 100%);
-            --gradient-gold: linear-gradient(135deg, #f7971e 0%, #ffd200 100%);
+            --sidebar-width: 280px;
+            --primary-blue: #2563eb;
+            --dark-navy: #0f172a;
+            --bg-light: #f8fafc;
+            --border-gray: #e2e8f0;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
         }
 
-        body {
-            font-family: 'Noto Sans TC', 'DM Sans', sans-serif;
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
-            min-height: 100vh;
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg-light); color: var(--text-main); display: flex; overflow: hidden; }
+
+        /* --- Sidebar --- */
+        .sidebar {
+            width: var(--sidebar-width);
+            height: 100vh;
+            background: var(--dark-navy);
+            color: white;
+            padding: 40px 24px;
             display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 40px 20px;
-            position: relative;
-            overflow-x: hidden;
-        }
-
-        .bg-shape {
-            position: fixed; border-radius: 50%;
-            filter: blur(100px); opacity: 0.15; z-index: 0;
-            animation: float 25s infinite ease-in-out;
-        }
-        .bg-shape-1 { width:600px; height:600px; background:var(--gradient-1); top:-250px; left:-250px; animation-delay:0s; }
-        .bg-shape-2 { width:500px; height:500px; background:var(--gradient-yt); bottom:-200px; right:-200px; animation-delay:7s; }
-        .bg-shape-3 { width:450px; height:450px; background:var(--gradient-3); top:40%; right:-150px; animation-delay:14s; }
-        .bg-shape-4 { width:400px; height:400px; background:var(--gradient-5); bottom:30%; left:-100px; animation-delay:21s; }
-
-        @keyframes float {
-            0%,100% { transform:translate(0,0) scale(1) rotate(0deg); }
-            25% { transform:translate(40px,-40px) scale(1.1) rotate(90deg); }
-            50% { transform:translate(-30px,30px) scale(0.9) rotate(180deg); }
-            75% { transform:translate(30px,40px) scale(1.05) rotate(270deg); }
-        }
-
-        .container { max-width:1400px; width:100%; position:relative; z-index:1; }
-
-        .presentation {
-            background: rgba(255,255,255,0.98);
-            backdrop-filter: blur(30px);
-            border-radius: 40px;
-            padding: 70px;
-            box-shadow: 0 60px 120px rgba(0,0,0,0.6),
-                        0 0 0 1px rgba(255,255,255,0.15),
-                        inset 0 1px 0 rgba(255,255,255,0.5);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .corner-decoration { position:absolute; width:150px; height:150px; opacity:0.06; }
-        .corner-decoration.top-left    { top:0; left:0;   background:var(--gradient-1); clip-path:polygon(0 0,100% 0,0 100%); }
-        .corner-decoration.bottom-right{ bottom:0; right:0; background:var(--gradient-yt); clip-path:polygon(100% 0,100% 100%,0 100%); }
-        .corner-decoration.top-right   { top:0; right:0;  background:var(--gradient-3); clip-path:polygon(100% 0,100% 100%,0 0); opacity:0.04; }
-
-        .header { margin-bottom:60px; }
-
-        .date-badge {
-            display:inline-flex; align-items:center; gap:12px;
-            background:var(--gradient-gold); color:white;
-            padding:14px 32px; border-radius:50px;
-            font-weight:700; font-size:16px; margin-bottom:24px;
-            box-shadow:0 12px 35px rgba(247,151,30,0.4);
-            animation:slideDown 0.6s ease-out;
-        }
-
-        @keyframes slideDown { from{opacity:0;transform:translateY(-30px)} to{opacity:1;transform:translateY(0)} }
-        @keyframes slideUp   { from{opacity:0;transform:translateY(40px)}  to{opacity:1;transform:translateY(0)} }
-        @keyframes fadeIn    { from{opacity:0;transform:translateY(30px)}  to{opacity:1;transform:translateY(0)} }
-
-        h1 {
-            font-family:'Playfair Display',serif;
-            font-size:64px; font-weight:900;
-            background:linear-gradient(135deg,#0f172a 0%,#334155 100%);
-            -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
-            margin-bottom:12px; line-height:1.1; letter-spacing:-1px;
-            animation:slideUp 0.8s ease-out 0.2s both;
-        }
-        .subtitle { color:#64748b; font-size:20px; font-weight:500; animation:slideUp 0.8s ease-out 0.3s both; }
-
-        .content-grid { display:grid; gap:35px; margin-top:50px; }
-
-        .section {
-            position:relative; padding:40px; border-radius:28px;
-            overflow:hidden; transition:all 0.4s cubic-bezier(0.4,0,0.2,1);
-            animation:fadeIn 0.6s ease-out both;
-        }
-        .section:nth-child(1){animation-delay:0.4s}
-        .section:nth-child(2){animation-delay:0.5s}
-        .section:nth-child(3){animation-delay:0.6s}
-        .section:hover { transform:translateY(-8px); box-shadow:0 25px 60px rgba(0,0,0,0.2); }
-        .section::before {
-            content:''; position:absolute; top:0;left:0;right:0;bottom:0;
-            background:linear-gradient(135deg,rgba(255,255,255,0.25) 0%,rgba(255,255,255,0) 100%);
-            pointer-events:none;
-        }
-
-        .section-yt          { background:var(--gradient-yt);  box-shadow:0 18px 45px rgba(255,78,80,0.35); }
-        .section-newsletter  { background:var(--gradient-1);   box-shadow:0 18px 45px rgba(102,126,234,0.35); }
-        .section-queue       { background:var(--gradient-5);   box-shadow:0 18px 45px rgba(67,233,123,0.35); }
-        .section-adi         { background:var(--gradient-3);   box-shadow:0 18px 45px rgba(79,172,254,0.35); }
-
-        .section-title {
-            font-family:'Playfair Display',serif; font-size:34px; font-weight:700;
-            color:white; margin-bottom:28px; display:flex; align-items:center; gap:16px;
-            text-shadow:0 2px 10px rgba(0,0,0,0.15);
-        }
-        .section-title svg { width:42px; height:42px; filter:drop-shadow(0 4px 10px rgba(0,0,0,0.25)); }
-
-        .item-list { list-style:none; display:flex; flex-direction:column; gap:16px; }
-
-        .item {
-            background:rgba(255,255,255,0.97);
-            padding:22px 28px; border-radius:18px;
-            display:flex; align-items:flex-start; gap:20px;
-            transition:all 0.3s ease;
-            box-shadow:0 5px 18px rgba(0,0,0,0.12);
-            position:relative; overflow:hidden;
-        }
-        .item::before {
-            content:''; position:absolute; left:0;top:0;bottom:0; width:6px;
-            background:var(--gradient-4); transform:scaleY(0); transition:transform 0.3s ease;
-        }
-        .item:hover::before { transform:scaleY(1); }
-        .item:hover { transform:translateX(10px); box-shadow:0 10px 30px rgba(0,0,0,0.18); }
-
-        .item-content { flex:1; }
-        .item-text { color:#1e293b; font-size:18px; font-weight:500; line-height:1.6; }
-        .item-note { color:#64748b; font-size:15px; margin-top:6px; font-weight:400; }
-
-        .bullet-point { width:8px; height:8px; background:#667eea; border-radius:50%; margin-top:8px; flex-shrink:0; }
-
-        .link-btn {
-            display:inline-flex; align-items:center; gap:8px;
-            padding:10px 20px; border-radius:12px; font-size:14px; font-weight:700;
-            color:white; text-decoration:none; transition:all 0.3s ease;
-            flex-shrink:0; white-space:nowrap;
-        }
-        .link-btn:hover { transform:translateY(-2px); filter:brightness(1.1); }
-        .btn-yt     { background:linear-gradient(135deg,#ff4e50,#c0392b); box-shadow:0 4px 14px rgba(255,78,80,0.4); }
-        .btn-gdrive { background:linear-gradient(135deg,#0f9d58,#34a853); box-shadow:0 4px 14px rgba(15,157,88,0.4); }
-        .btn-link   { background:linear-gradient(135deg,#667eea,#764ba2); box-shadow:0 4px 14px rgba(102,126,234,0.4); }
-
-        /* Calendar */
-        .calendar-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:22px; }
-
-        .calendar-month {
-            background:rgba(255,255,255,0.15); border-radius:20px; padding:22px;
-            backdrop-filter:blur(10px); border:2px solid rgba(255,255,255,0.2);
-            transition:all 0.3s ease;
-        }
-        .calendar-month:hover { transform:translateY(-5px); background:rgba(255,255,255,0.22); }
-
-        .calendar-header {
-            display:flex; align-items:center; gap:10px; color:white;
-            font-weight:700; font-size:17px; margin-bottom:18px; padding-bottom:14px;
-            border-bottom:2px solid rgba(255,255,255,0.3); text-shadow:0 2px 8px rgba(0,0,0,0.2);
-        }
-
-        .calendar-events { display:flex; flex-direction:column; gap:12px; }
-
-        .calendar-event {
-            background:rgba(255,255,255,0.97); border-radius:14px; padding:14px 16px;
-            display:flex; gap:14px; align-items:center;
-            transition:all 0.3s ease; box-shadow:0 4px 12px rgba(0,0,0,0.1);
-            position:relative; overflow:hidden;
-        }
-        .calendar-event::before {
-            content:''; position:absolute; left:0;top:0;bottom:0; width:4px;
-            background:linear-gradient(180deg,#667eea,#764ba2); transition:width 0.3s ease;
-        }
-        .calendar-event:hover::before { width:8px; }
-        .calendar-event:hover { transform:translateX(6px); box-shadow:0 8px 20px rgba(0,0,0,0.15); }
-
-        .calendar-event.sent    { background:rgba(187,247,208,0.5); }
-        .calendar-event.sent::before  { background:linear-gradient(180deg,#10b981,#059669); }
-        .calendar-event.working { background:rgba(254,249,195,0.6); }
-        .calendar-event.working::before { background:var(--gradient-gold); }
-
-        .event-date {
-            flex-shrink:0; width:50px; height:50px;
-            background:linear-gradient(135deg,#667eea,#764ba2); color:white;
-            border-radius:12px; display:flex; align-items:center; justify-content:center;
-            font-weight:900; font-size:14px; text-align:center; line-height:1.2;
-            box-shadow:0 4px 12px rgba(102,126,234,0.3);
-        }
-        .calendar-event.sent    .event-date { background:linear-gradient(135deg,#10b981,#059669); box-shadow:0 4px 12px rgba(16,185,129,0.3); }
-        .calendar-event.working .event-date { background:var(--gradient-gold); box-shadow:0 4px 12px rgba(247,151,30,0.3); }
-
-        .event-content { flex:1; }
-        .event-title  { color:#1e293b; font-weight:700; font-size:15px; margin-bottom:3px; }
-        .event-status { color:#64748b; font-size:12px; font-weight:600; }
-        .calendar-event.sent    .event-status { color:#059669; }
-        .calendar-event.working .event-status { color:#d97706; }
-
-        .event-link {
-            display:inline-flex; align-items:center; gap:5px; margin-top:6px;
-            padding:5px 10px; background:linear-gradient(135deg,#667eea,#764ba2);
-            color:white; border-radius:8px; font-size:12px; font-weight:600;
-            text-decoration:none; transition:all 0.3s ease;
-        }
-        .event-link:hover { transform:translateY(-1px); filter:brightness(1.1); }
-
-        /* Divider */
-        .divider { margin-top:70px; padding-top:70px; border-top:3px dashed rgba(148,163,184,0.25); }
-
-        .section-header {
-            font-family:'Playfair Display',serif; font-size:46px; font-weight:900;
-            background:linear-gradient(135deg,#0f172a 0%,#334155 100%);
-            -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
-            margin-bottom:40px; letter-spacing:-0.5px;
-            animation:slideUp 0.8s ease-out 0.5s both;
-        }
-
-        .adi-card {
-            background:rgba(255,255,255,0.97); padding:28px 32px; border-radius:20px;
-            display:flex; align-items:flex-start; gap:24px;
-            box-shadow:0 8px 24px rgba(0,0,0,0.14); position:relative; overflow:hidden;
-            transition:all 0.3s ease;
-        }
-        .adi-card::before { content:''; position:absolute; left:0;top:0;bottom:0; width:6px; background:var(--gradient-3); }
-        .adi-card:hover { transform:translateX(8px); box-shadow:0 12px 32px rgba(0,0,0,0.2); }
-        .adi-icon {
-            flex-shrink:0; width:52px; height:52px;
-            background:linear-gradient(135deg,#4facfe,#00f2fe); border-radius:14px;
-            display:flex; align-items:center; justify-content:center;
-            box-shadow:0 4px 14px rgba(79,172,254,0.35); margin-top:2px;
-        }
-        .adi-card-content { flex:1; min-width:0; }
-        .adi-card-title { color:#1e293b; font-size:18px; font-weight:700; margin-bottom:8px; }
-        .adi-notes { display:flex; flex-direction:column; gap:6px; margin-top:10px; }
-        .adi-note-item {
-            display:flex; align-items:flex-start; gap:10px;
-            color:#475569; font-size:14px; line-height:1.5;
-        }
-        .adi-note-num {
-            flex-shrink:0; width:22px; height:22px;
-            background:linear-gradient(135deg,#4facfe,#00f2fe); color:white;
-            border-radius:50%; display:flex; align-items:center; justify-content:center;
-            font-size:11px; font-weight:700; margin-top:1px;
-        }
-
-        /* Case Study CTA */
-        .cta-card {
-            background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 50%, #0f2744 100%);
-            border-radius: 28px;
-            padding: 48px 52px;
-            display: flex;
-            align-items: center;
-            gap: 48px;
-            box-shadow: 0 20px 60px rgba(15,23,42,0.5), 0 0 0 1px rgba(255,255,255,0.08);
-            position: relative;
-            overflow: hidden;
-        }
-        .cta-card::before {
-            content: '';
-            position: absolute;
-            top: -80px; right: -80px;
-            width: 300px; height: 300px;
-            background: radial-gradient(circle, rgba(102,126,234,0.25) 0%, transparent 70%);
-            pointer-events: none;
-        }
-        .cta-card::after {
-            content: '';
-            position: absolute;
-            bottom: -60px; left: 200px;
-            width: 250px; height: 250px;
-            background: radial-gradient(circle, rgba(79,172,254,0.15) 0%, transparent 70%);
-            pointer-events: none;
-        }
-        .cta-left {
-            display: flex;
-            gap: 28px;
-            flex: 1;
-            align-items: flex-start;
-            position: relative;
-            z-index: 1;
-        }
-        .cta-icon {
+            flex-direction: column;
             flex-shrink: 0;
-            width: 68px; height: 68px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            border-radius: 20px;
-            display: flex; align-items: center; justify-content: center;
-            box-shadow: 0 8px 24px rgba(102,126,234,0.5);
-            margin-top: 4px;
         }
-        .cta-body { flex: 1; }
-        .cta-eyebrow {
-            color: #94a3b8;
-            font-size: 13px; font-weight: 700;
-            letter-spacing: 2px; text-transform: uppercase;
-            margin-bottom: 8px;
-        }
-        .cta-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 32px; font-weight: 900;
-            color: white; line-height: 1.2;
-            margin-bottom: 14px;
-        }
-        .cta-desc {
-            color: #94a3b8;
-            font-size: 15px; line-height: 1.7;
-            margin-bottom: 20px;
-            max-width: 520px;
-        }
-        .cta-tags { display: flex; gap: 10px; flex-wrap: wrap; }
-        .tag {
-            background: rgba(255,255,255,0.08);
-            border: 1px solid rgba(255,255,255,0.12);
-            color: #cbd5e1;
-            padding: 6px 14px;
-            border-radius: 50px;
-            font-size: 13px; font-weight: 600;
-        }
-        .cta-right {
-            flex-shrink: 0;
-            display: flex; flex-direction: column;
-            align-items: center; gap: 14px;
-            position: relative; z-index: 1;
-        }
-        .cta-btn {
-            display: inline-flex; align-items: center; gap: 10px;
-            padding: 18px 32px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white; text-decoration: none;
-            border-radius: 16px;
-            font-size: 16px; font-weight: 700;
-            white-space: nowrap;
-            box-shadow: 0 8px 28px rgba(102,126,234,0.55);
-            transition: all 0.3s ease;
-        }
-        .cta-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 14px 36px rgba(102,126,234,0.7);
-            filter: brightness(1.1);
-        }
-        .cta-note { color: #64748b; font-size: 13px; font-weight: 500; }
+        .brand-logo { width: 150px; height: auto; margin-bottom: 18px; display: block; }
+        .logo { font-size: 22px; font-weight: 700; margin-bottom: 48px; display: flex; align-items: center; gap: 10px; }
+        .logo-icon { width: 12px; height: 24px; background: var(--primary-blue); border-radius: 2px; }
+        .language-switch { margin-top: auto; padding-left: 12px; font-size: 13px; color: #94a3b8; }
+        .language-switch a { color: #cbd5e1; text-decoration: none; font-weight: 600; }
+        .language-switch a.active { color: white; }
+        .language-switch span { margin: 0 8px; color: #475569; }
 
-        @media (max-width:768px) {
-            .cta-card { flex-direction:column; padding:36px 28px; gap:32px; }
-            .cta-right { width:100%; }
-            .cta-btn { width:100%; justify-content:center; }
-            .presentation { padding:40px 30px; }
-            h1 { font-size:44px; }
-            .section-title { font-size:26px; }
-            .section-header { font-size:34px; }
-            .calendar-grid { grid-template-columns:1fr; }
-            .adi-card { flex-direction:column; gap:16px; }
-            .adi-card .link-btn { width:100%; justify-content:center; }
+        .nav-group { margin-bottom: 30px; }
+        .nav-label { font-size: 11px; color: #94a3b8; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 12px; padding-left: 12px; font-weight: 600; }
+        
+        .nav-item { 
+            padding: 12px 16px; border-radius: 8px; cursor: pointer; transition: 0.2s; 
+            color: #cbd5e1; display: block; text-decoration: none; font-size: 14px; font-weight: 500;
+            margin-bottom: 4px;
         }
-        @media (max-width:480px) {
-            .presentation { padding:30px 20px; }
-            h1 { font-size:36px; }
-            .item { flex-wrap:wrap; }
-            .link-btn { width:100%; justify-content:center; margin-top:8px; }
+        .nav-item:hover { background: rgba(255,255,255,0.08); color: white; }
+        .nav-item.active { background: var(--primary-blue); color: white; }
+
+        /* --- Main Content Area --- */
+        .main-container { flex: 1; height: 100vh; overflow-y: auto; padding: 60px 80px; }
+        
+        /* 預設隱藏所有分頁內容 */
+        .tab-content { display: none; animation: fadeIn 0.3s ease; }
+        /* 顯示啟動中的分頁 */
+        .tab-content.active { display: block; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .header { margin-bottom: 40px; }
+        .page-title { font-size: 32px; font-weight: 700; letter-spacing: -1px; }
+
+        /* --- UI Components --- */
+        .card { background: white; border-radius: 16px; border: 1px solid var(--border-gray); padding: 32px; margin-bottom: 24px; }
+        .list-row { display: flex; align-items: center; padding: 18px 0; border-bottom: 1px solid #f1f5f9; }
+        .list-row:last-child { border-bottom: none; }
+        .list-info { flex: 1; }
+        .list-title { font-weight: 600; margin-bottom: 4px; }
+        .list-meta { font-size: 13px; color: var(--text-muted); }
+        .section-title { font-size: 12px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1.2px; font-weight: 700; margin: 8px 0 14px; }
+        .section-title:not(:first-child) { margin-top: 30px; }
+        .status { display: inline-block; margin-left: 8px; padding: 3px 8px; border-radius: 999px; background: #eff6ff; color: var(--primary-blue); font-size: 11px; font-weight: 700; }
+        .monthly-section { background: white; border: 1px solid var(--border-gray); border-radius: 16px; padding: 28px; margin-bottom: 24px; }
+        .monthly-section-title { font-size: 18px; font-weight: 700; margin-bottom: 20px; }
+        .event-list { display: grid; gap: 16px; }
+        .event-card { display: grid; grid-template-columns: 90px minmax(0, 1fr) auto; gap: 22px; align-items: center; background: white; border: 1px solid var(--border-gray); border-radius: 16px; padding: 24px 28px; }
+        .event-date { flex-shrink: 0; color: var(--dark-navy); font-weight: 800; font-size: 26px; line-height: 1; text-align: center; }
+        .event-month { display: block; margin-top: 8px; color: #64748b; font-size: 12px; font-weight: 700; letter-spacing: 1px; }
+        .event-content { flex: 1; min-width: 0; }
+        .event-title { font-size: 17px; font-weight: 700; margin-bottom: 7px; color: var(--dark-navy); }
+        .event-description { font-size: 14px; color: var(--text-muted); margin-bottom: 10px; }
+        .event-link { color: #2563eb; font-size: 14px; font-weight: 600; text-decoration: none; }
+        .event-link:hover { text-decoration: underline; }
+        .event-status { justify-self: end; border-radius: 999px; padding: 8px 14px; font-size: 13px; font-weight: 700; white-space: nowrap; }
+        .event-card.sent .event-status { background: #dff7ee; color: #047857; }
+        .event-card.scheduled .event-status { background: #eaf2ff; color: #2563eb; }
+        .event-card.progress .event-status { background: #fef3c7; color: #d97706; }
+        .topic-list { display: flex; flex-wrap: wrap; gap: 10px; }
+        .topic-pill { padding: 8px 12px; border-radius: 8px; background: #f8fafc; border: 1px solid var(--border-gray); font-size: 13px; font-weight: 600; color: var(--text-main); }
+        #lock-section.unlocked { background: transparent; border: none; padding: 0; }
+        .workspace-section { background: white; border: 1px solid var(--border-gray); border-radius: 16px; padding: 28px; margin-bottom: 24px; }
+        .workspace-section-title { font-size: 18px; font-weight: 700; margin-bottom: 20px; }
+        .workspace-list { display: grid; gap: 16px; }
+        .workspace-card { display: grid; grid-template-columns: 90px minmax(0, 1fr) auto; gap: 22px; align-items: center; background: white; border: 1px solid var(--border-gray); border-radius: 16px; padding: 24px 28px; }
+        .workspace-label { color: var(--dark-navy); font-size: 13px; font-weight: 800; letter-spacing: 1.1px; text-align: center; text-transform: uppercase; }
+        .workspace-title { font-size: 17px; font-weight: 700; margin-bottom: 7px; color: var(--dark-navy); }
+        .workspace-meta { font-size: 14px; color: var(--text-muted); }
+        
+        .btn-outline { 
+            padding: 8px 16px; border-radius: 8px; font-size: 13px; font-weight: 600; 
+            text-decoration: none; border: 1px solid var(--border-gray); color: var(--text-main); 
+        }
+        .btn-outline:hover { background: #f8fafc; }
+
+        /* --- Password Lock --- */
+        #lock-screen { text-align: center; padding: 60px 0; }
+        input[type="password"] { padding: 12px; border-radius: 8px; border: 1px solid var(--border-gray); margin-bottom: 12px; width: 260px; }
+        .btn-primary { background: var(--dark-navy); color: white; border: none; padding: 12px 30px; border-radius: 8px; cursor: pointer; font-weight: 600; }
+
+        @media (max-width: 720px) {
+            .event-card { grid-template-columns: 64px 1fr; gap: 16px; align-items: flex-start; }
+            .event-date { font-size: 22px; text-align: left; }
+            .event-status { grid-column: 2; justify-self: start; }
+            .workspace-card { grid-template-columns: 64px 1fr; gap: 16px; align-items: flex-start; }
+            .workspace-label { text-align: left; }
+            .workspace-card .btn-outline { grid-column: 2; justify-self: start; }
         }
     </style>
 </head>
 <body>
-    <div class="bg-shape bg-shape-1"></div>
-    <div class="bg-shape bg-shape-2"></div>
-    <div class="bg-shape bg-shape-3"></div>
-    <div class="bg-shape bg-shape-4"></div>
 
-    <div class="container">
-        <div class="presentation">
-            <div class="corner-decoration top-left"></div>
-            <div class="corner-decoration bottom-right"></div>
-            <div class="corner-decoration top-right"></div>
+    <aside class="sidebar">
+        <img class="brand-logo" src="logo/logo small.png" alt="GeoVision">
+        <div class="logo"><div class="logo-icon"></div><span>Marketing Hub</span></div>
+        
+        <nav class="nav-group">
+            <div class="nav-label">行銷月報</div>
+            <div class="nav-item active" onclick="showTab('tab-report-may', this)">5 月</div>
+        </nav>
 
-            <!-- Header -->
-            <div class="header">
-                <div class="date-badge">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                        <rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
-                    </svg>
-                    報告月份 &bull; 2026年4月
+        <nav class="nav-group">
+            <div class="nav-label">團隊工作區</div>
+            <div class="nav-item" onclick="showTab('tab-internal', this)">資訊交流</div>
+        </nav>
+
+        <div class="language-switch">
+            <a href="index.html">EN</a><span>|</span><a href="zh.html" class="active">繁中</a>
+        </div>
+    </aside>
+
+    <main class="main-container">
+        
+        <!-- PAGE 1: TEAM WORKSPACE (Locked) -->
+        <div id="tab-internal" class="tab-content">
+            <header class="header">
+                <h1 class="page-title">資訊交流</h1>
+            </header>
+
+            <div id="lock-section" class="card">
+                <div id="lock-screen">
+                    <p style="margin-bottom:15px; font-weight:600;">GV 團隊密碼</p>
+                    <input type="password" id="pass-input" placeholder="密碼"><br>
+                    <button class="btn-primary" onclick="checkPass()">進入</button>
                 </div>
-                <h1>行銷月報</h1>
-                <p class="subtitle">行銷部門 &bull; 每月報告</p>
-            </div>
-
-            <div class="content-grid">
-
-                <!-- YouTube -->
-                <div class="section section-yt">
-                    <h2 class="section-title">
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.7 15.5V8.5l6.3 3.5-6.3 3.5z"/>
-                        </svg>
-                        YouTube 最新影片
-                    </h2>
-                    <ul class="item-list">
-                        <li class="item">
-                            <div class="bullet-point" style="background:#ff4e50;"></div>
-                            <div class="item-content">
-                                <div class="item-text">如何將 GV-AS Bridge 連到 GV-Cloud Access Control</div>
-                                <div class="item-note">教學影片 &bull; GV-Cloud Access Control 系列</div>
+                
+                <div id="internal-links" class="workspace-sections" style="display:none;">
+                    <div class="workspace-section">
+                        <h2 class="workspace-section-title">行銷素材</h2>
+                        <div class="workspace-list">
+                            <div class="workspace-card">
+                                <div class="workspace-label">素材</div>
+                                <div>
+                                    <div class="workspace-title">電子報素材</div>
+                                    <div class="workspace-meta">可重複使用的電子報與簡報素材。</div>
+                                </div>
+                                <a href="https://pse.is/geo-presentation" class="btn-outline" target="_blank">Google Drive</a>
                             </div>
-                            <a href="https://youtu.be/HCqqK2zXdTw" target="_blank" class="link-btn btn-yt">
-                                <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
-                                    <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.7 15.5V8.5l6.3 3.5-6.3 3.5z"/>
-                                </svg>
-                                觀看
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Newsletter Schedule -->
-                <div class="section section-newsletter">
-                    <h2 class="section-title">
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-                        </svg>
-                        Newsletter 排程
-                    </h2>
-                    <div class="calendar-grid">
-                        <!-- April -->
-                        <div class="calendar-month">
-                            <div class="calendar-header">
-                                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="white" stroke-width="2">
-                                    <rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
-                                </svg>
-                                2026年4月
-                            </div>
-                            <div class="calendar-events">
-                                <div class="calendar-event sent">
-                                    <div class="event-date">4/3</div>
-                                    <div class="event-content">
-                                        <div class="event-title">4月新品月報</div>
-                                        <div class="event-status">✓ 已發送</div>
-                                        <a href="https://www.geovision.com.tw/_upload/doc/re/2026-04-release.html" target="_blank" class="event-link">
-                                            <svg viewBox="0 0 24 24" fill="currentColor" width="11" height="11"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14l-5-5 1.4-1.4 3.6 3.6 7.6-7.6L21 8l-9 9z"/></svg>
-                                            閱讀
-                                        </a>
-                                    </div>
+                            <div class="workspace-card">
+                                <div class="workspace-label">素材</div>
+                                <div>
+                                    <div class="workspace-title">網站專案</div>
+                                    <div class="workspace-meta">產品頁視覺與可重複使用的網頁素材。</div>
                                 </div>
-                                <div class="calendar-event sent">
-                                    <div class="event-date">4/14</div>
-                                    <div class="event-content">
-                                        <div class="event-title">ISC West Recap</div>
-                                        <div class="event-status">✓ 已發送</div>
-                                        <a href="https://www.geovision.com.tw/spotlight/reiscwest2026/desktop/index.html" target="_blank" class="event-link">
-                                            <svg viewBox="0 0 24 24" fill="currentColor" width="11" height="11"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-02-2-2zm-7 14l-5-5 1.4-1.4 3.6 3.6 7.6-7.6L21 8l-9 9z"/></svg>
-                                            閱讀
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="calendar-event working">
-                                    <div class="event-date">4/29</div>
-                                    <div class="event-content">
-                                        <div class="event-title">Panoramic / Wide Angle Camera</div>
-                                        <div class="event-status">⚙ 製作中</div>
-                                    </div>
-                                </div>
+                                <a href="https://pse.is/website-assets" class="btn-outline" target="_blank">Google Drive</a>
                             </div>
                         </div>
+                    </div>
 
-                        <!-- May -->
-                        <div class="calendar-month">
-                            <div class="calendar-header">
-                                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="white" stroke-width="2">
-                                    <rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
-                                </svg>
-                                2026年5月
-                            </div>
-                            <div class="calendar-events">
-                                <div class="calendar-event upcoming">
-                                    <div class="event-date">5/13</div>
-                                    <div class="event-content">
-                                        <div class="event-title">澳洲 Federation University — 9 校區</div>
-                                        <div class="event-status">已排程</div>
-                                    </div>
+                    <div class="workspace-section">
+                        <h2 class="workspace-section-title">更新資料</h2>
+                        <div class="workspace-list">
+                            <div class="workspace-card">
+                                <div class="workspace-label">表單</div>
+                                <div>
+                                    <div class="workspace-title">提交 Case Study</div>
+                                    <div class="workspace-meta">在這裡填寫專案資訊。</div>
                                 </div>
+                                <a href="https://pse.is/geo-case-study" class="btn-outline" target="_blank">開啟表單</a>
+                            </div>
+                            <div class="workspace-card">
+                                <div class="workspace-label">表單</div>
+                                <div>
+                                    <div class="workspace-title">參展資訊更新</div>
+                                    <div class="workspace-meta">在這裡更新你的展會與活動資訊。</div>
+                                </div>
+                                <a href="https://pse.is/event-update" class="btn-outline" target="_blank">開啟表單</a>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
 
-            </div><!-- /content-grid -->
-
-            <!-- Marketing Materials -->
-            <div class="divider">
-                <h2 class="section-header">行銷素材</h2>
-
-                <div class="section section-adi">
-                    <h2 class="section-title">
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm-5 14H4v-4h11v4zm0-5H4V9h11v4zm5 5h-4V9h4v9z"/>
-                        </svg>
-                        A Website Project
-                    </h2>
-                    <div class="adi-card">
-                        <div class="adi-icon">
-                            <svg viewBox="0 0 24 24" fill="white" width="26" height="26">
-                                <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm7 13H5v-.23c0-.62.28-1.2.76-1.58C7.47 15.82 9.64 15 12 15s4.53.82 6.24 2.19c.48.38.76.97.76 1.58V19z"/>
-                            </svg>
+        <!-- PAGE 2: MAY REPORT -->
+        <div id="tab-report-may" class="tab-content active">
+            <header class="header">
+                <h1 class="page-title">2026 年 5 月</h1>
+            </header>
+            <div class="monthly-section">
+                <h2 class="monthly-section-title">電子報發送日</h2>
+                <div class="event-list">
+                    <div class="event-card sent">
+                        <div class="event-date">4/29<span class="event-month">4 月</span></div>
+                        <div class="event-content">
+                            <div class="event-title">Wide Angle Camera</div>
+                            <div class="event-description">Wide Angle Camera / Panoramic</div>
+                            <a href="https://www.geovision.com.tw/spotlight/panoramic/desktop/index.html" class="event-link" target="_blank">geovision.com.tw/spotlight/panoramic</a>
                         </div>
-                        <div class="adi-card-content">
-                            <div class="adi-card-title">網站專案素材</div>
-                            <div class="adi-notes">
-                                <div class="adi-note-item">
-                                    <div class="adi-note-num">1</div>
-                                    <span>可自行取用修改</span>
-                                </div>
-                                <div class="adi-note-item">
-                                    <div class="adi-note-num">2</div>
-                                    <span>圖片上無型號</span>
-                                </div>
-                                <div class="adi-note-item">
-                                    <div class="adi-note-num">3</div>
-                                    <span>僅提供 PNG 格式</span>
-                                </div>
-                            </div>
+                        <div class="event-status">已發送</div>
+                    </div>
+                    <div class="event-card sent">
+                        <div class="event-date">5/6<span class="event-month">5 月</span></div>
+                        <div class="event-content">
+                            <div class="event-title">5 月新品月報</div>
+                            <a href="https://www.geovision.com.tw/_upload/doc/re/2026-05-release.html" class="event-link" target="_blank">2026-05-release.html</a>
                         </div>
-                        <a href="https://drive.google.com/drive/folders/19Kx88Xk_-_6B2mwGl4HSnR36QXzj8iWd?usp=drive_link" target="_blank" class="link-btn btn-gdrive" style="align-self:flex-start;">
-                            <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
-                                <path d="M7.71 3.5L1.15 15l3.43 5.94 6.56-11.44L7.71 3.5zm8.59 0l-3.43 5.94L19.42 21H22.85L16.3 3.5zM12 10.06L8.57 15.94l3.43 3.56 3.43-3.56L12 10.06z"/>
-                            </svg>
-                            Google Drive
-                        </a>
+                        <div class="event-status">已發送</div>
+                    </div>
+                    <div class="event-card scheduled">
+                        <div class="event-date">5/13<span class="event-month">5 月</span></div>
+                        <div class="event-content">
+                            <div class="event-title">Federation University Australia: Unified Security Across 9 Campuses</div>
+                        </div>
+                        <div class="event-status">已排程</div>
+                    </div>
+                    <div class="event-card progress">
+                        <div class="event-date">5/26<span class="event-month">5 月</span></div>
+                        <div class="event-content">
+                            <div class="event-title">Cloud Access Control</div>
+                            <div class="event-description">內容製作中</div>
+                        </div>
+                        <div class="event-status">製作中</div>
                     </div>
                 </div>
             </div>
 
-        </div><!-- /presentation -->
-    </div><!-- /container -->
+            <div class="monthly-section">
+                <h2 class="monthly-section-title">預計電子報主題</h2>
+                <div class="topic-list">
+                    <div class="topic-pill">零售 3D 人流計數</div>
+                    <div class="topic-pill">Cloud PoE Management</div>
+                    <div class="topic-pill">Cloud Web Report</div>
+                    <div class="topic-pill">AGX</div>
+                    <div class="topic-pill">Cloud NVR</div>
+                </div>
+            </div>
+
+            <div class="monthly-section">
+                <h2 class="monthly-section-title">5 月 Webinar</h2>
+                <div class="list-row">
+                    <div class="list-info">
+                        <div class="list-title">GV-AI Guard</div>
+                        <div class="list-meta">名額開放中，請分享報名連結給客戶。</div>
+                    </div>
+                    <button class="btn-outline" type="button" onclick="copyWebinarLink(this)">複製連結</button>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <script>
+        // 切換分頁的邏輯
+        function showTab(tabId, element) {
+            // 1. 隱藏所有分頁
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => content.classList.remove('active'));
+
+            // 2. 顯示點選的分頁
+            document.getElementById(tabId).classList.add('active');
+
+            // 3. 更新選單的 Active 狀態
+            const navItems = document.querySelectorAll('.nav-item');
+            navItems.forEach(item => item.classList.remove('active'));
+            element.classList.add('active');
+        }
+
+        // 內部密碼邏輯
+        function checkPass() {
+            const pass = document.getElementById('pass-input').value;
+            if(pass === 'geogeo3356***') {
+                document.getElementById('lock-screen').style.display = 'none';
+                document.getElementById('lock-section').classList.add('unlocked');
+                document.getElementById('internal-links').style.display = 'block';
+            } else {
+                alert('密碼錯誤');
+            }
+        }
+
+        document.getElementById('pass-input').addEventListener('keydown', (event) => {
+            if (event.key === 'Enter') {
+                checkPass();
+            }
+        });
+
+        function copyWebinarLink(button) {
+            const webinarLink = 'https://www.geovision.com.tw/us/onepage/webinar202605/';
+            navigator.clipboard.writeText(webinarLink).then(() => {
+                button.textContent = '已複製';
+                setTimeout(() => {
+                    button.textContent = '複製連結';
+                }, 1500);
+            }).catch(() => {
+                window.prompt('請複製這個 Webinar 報名連結：', webinarLink);
+            });
+        }
+    </script>
 </body>
 </html>
